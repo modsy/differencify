@@ -177,7 +177,10 @@ describe('Compare Image', () => {
     fs.existsSync.mockReturnValueOnce(true);
 
     const config = {
-      ...mockConfig,
+      imageSnapshotPath: './differencify_report',
+      imageSnapshotPathProvided: false,
+      saveDifferencifiedImage: true,
+      saveCurrentImage: true,
       mismatchThreshold: 0,
     };
     const result = await compareImage(Object, config, mockTestConfig);
